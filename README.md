@@ -8,20 +8,20 @@ A Python file conversion utility that lets users convert documents between multi
 file-converter/
 ├── main.py                 # Main application entry point
 ├── requirements.txt        # Python dependencies
-├── README.md              # This file
-├── input/                 # Folder for files to convert
-├── output/                # Folder for converted files
-├── converters/            # Converter modules
+├── README.md               # This file
+├── input/                  # Folder for files to convert
+├── output/                 # Folder for converted files
+├── converters/             # Converter modules
 │   ├── __init__.py        # Package initialization
 │   ├── base_converter.py  # Abstract base class for all converters
 │   ├── csv_converter.py   # CSV file converter
 │   ├── pdf_converter.py   # PDF file converter
 │   ├── docx_converter.py  # Word document converter
 │   └── txt_converter.py   # Text file converter
-├── ui/                    # User interface
-│   └── gui.py            # GUI implementation
-└── utils/                 # Utility functions
-    └── file_utils.py     # File handling utilities
+├── ui/                     # User interface
+│   └── gui.py              # GUI implementation
+└── utils/                  # Utility functions
+    └── file_utils.py      # File handling utilities
 ```
 
 ## Currently Implemented
@@ -89,14 +89,4 @@ To validate all converters are working correctly:
 ```bash
 python test_converters.py
 ```
-
 This will create sample files and test each converter type.
-
-## To Do
-
-- [x] Complete `main.py` - Main application entry point
-- [x] Complete `utils/file_utils.py` - File utility functions
-- [x] Complete `ui/gui.py` - Graphical user interface
-- [x] Fix GUI format detection logic
-- [x] Fix converter interface consistency
-- [x] Add comprehensive test suite
