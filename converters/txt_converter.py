@@ -26,7 +26,7 @@ class TXTConverter(BaseConverter):
     """
     Convert a plain text file to another format (CSV, Excel, or JSON).
     """
-    def convert(self, output_path, delimiter=None):
+    def convert(self, output_path):
         try:
             # Stores the output path for later use
             self.output_path = output_path
@@ -38,11 +38,10 @@ class TXTConverter(BaseConverter):
             
             print(f"Reading text file: {self.input_path}")
             
-            # If no delimiter is specified, use a pattern that matches any whitespace
+            # Use a pattern that matches any whitespace
             # This includes spaces, tabs, and multiple spaces
-            if delimiter is None:
-                # '\s+' is a regular expression that matches one or more whitespace characters
-                delimiter = '\s+'
+            # '\s+' is a regular expression that matches one or more whitespace characters
+            delimiter = '\s+'
             
             # Reads the text file into a pandas DataFrame
             # sep=delimiter tells pandas what character separates the columns

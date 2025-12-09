@@ -60,13 +60,43 @@ The project uses the following Python libraries (see `requirements.txt`):
 
 ## How to Use
 
-1. Place the file you want to convert in the `input/` folder
-2. Specify the input file path and desired output format
-3. Run the converter
-4. Find the converted file in the `output/` folder
+### Using the GUI
+
+1. Run the application:
+   ```bash
+   python main.py
+   ```
+
+2. The GUI window will open with the following steps:
+   - **Select Input File**: Click "Browse" to choose the file to convert
+   - **Auto-Detection**: Input format is automatically detected from file extension
+   - **Choose Output Format**: Select desired output format from the dropdown
+   - **Select Output Location**: Click "Browse" to choose where to save the converted file
+   - **Convert**: Click "Convert" button to start the conversion
+   - **Results**: Success/error messages will appear in the progress section
+
+### Supported Conversions
+
+- **CSV**: → XLSX, JSON, HTML, CSV
+- **PDF**: → DOCX
+- **DOCX**: → TXT
+- **TXT**: → CSV, XLSX, JSON
+
+## Running Tests
+
+To validate all converters are working correctly:
+
+```bash
+python test_converters.py
+```
+
+This will create sample files and test each converter type.
 
 ## To Do
 
-- [ ] Complete `main.py` - Main application logic
-- [ ] Complete `utils/file_utils.py` - File utility functions
-- [ ] Complete `ui/gui.py` - Graphical user interface
+- [x] Complete `main.py` - Main application entry point
+- [x] Complete `utils/file_utils.py` - File utility functions
+- [x] Complete `ui/gui.py` - Graphical user interface
+- [x] Fix GUI format detection logic
+- [x] Fix converter interface consistency
+- [x] Add comprehensive test suite
