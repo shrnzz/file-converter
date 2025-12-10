@@ -88,7 +88,7 @@ class FileConverterGUI:
         self.style.configure("Accent.TButton", font=(self.font_family, 10, "bold"))
         self.style.configure("Secondary.TButton", font=(self.font_family, 10))
         
-        # Configure combobox styles with explicit fieldbackground and foreground
+        # Combobox styles with explicit field background and foreground
         self.style.configure("TCombobox", font=(self.font_family, 10), fieldbackground=self.bg_primary, background=self.bg_primary, foreground=self.text_primary)
         # Map ensures the field itself uses the correct colors
         self.style.map("TCombobox",
@@ -96,13 +96,13 @@ class FileConverterGUI:
                        background=[("readonly", self.bg_primary)],
                        foreground=[("readonly", self.text_primary)])
         
-        # Configure progressbar
+        # Progress bar
         self.style.configure("TProgressbar", background=self.success_color, troughcolor=self.bg_primary)
 
     def apply_theme(self):
         """Apply colors to styles and widgets based on current theme."""
         if self.theme == "dark":
-            # Dark theme colors (from user-provided palette)
+            # Dark theme colors 
             self.bg_primary = "#0f0f0f"
             self.bg_secondary = "#1a1a1a"
             self.accent_color = "#3a3a3a"
@@ -111,7 +111,7 @@ class FileConverterGUI:
             self.text_muted = "#9a9a9a"
             self.border_color = "#2a2a2a"
         else:
-            # Light theme colors (from user-provided palette)
+            # Light theme colors 
             self.bg_primary = "#f8f8f8"
             self.bg_secondary = "#efefef"
             self.accent_color = "#cfcfcf"
@@ -424,7 +424,7 @@ class FileConverterGUI:
             self.input_file_path.set(file_path)
             # Auto-detect input format from file extension
             file_ext = get_file_extension(file_path).lower()  # e.g., '.csv'
-            # Map extensions to converter types
+            # Map the different extensions to converter types
             ext_to_format = {
                 '.csv': 'CSV',
                 '.pdf': 'PDF',
@@ -481,7 +481,7 @@ class FileConverterGUI:
             messagebox.showerror("Error", "Please select an output file path.")
             return
         
-        # Run conversion in separate thread to prevent UI freezing
+        # Run the conversion in a separate thread to prevent the UI from freezing
         thread = threading.Thread(target=self.perform_conversion)
         thread.daemon = True
         thread.start()
@@ -507,7 +507,7 @@ class FileConverterGUI:
             converter_class = self.converters[input_format]
             converter = converter_class(input_file)
             
-            # Perform conversion
+            # Perform the conversion
             success = converter.convert(output_file)
             
             self.progress_bar.stop()
