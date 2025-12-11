@@ -6,22 +6,24 @@ A Python file conversion utility that lets users convert documents between multi
 
 ```
 file-converter/
-├── main.py                 # Main application entry point
-├── requirements.txt        # Python dependencies
-├── README.md               # This file
-├── input/                  # Folder for files to convert
-├── output/                 # Folder for converted files
-├── converters/             # Converter modules
-│   ├── __init__.py        # Package initialization
-│   ├── base_converter.py  # Abstract base class for all converters
-│   ├── csv_converter.py   # CSV file converter
-│   ├── pdf_converter.py   # PDF file converter
-│   ├── docx_converter.py  # Word document converter
-│   └── txt_converter.py   # Text file converter
-├── ui/                     # User interface
-│   └── gui.py              # GUI implementation
-└── utils/                  # Utility functions
-    └── file_utils.py      # File handling utilities
+├── main.py                      # Main application entry point
+├── requirements.txt             # Python dependencies (pandas, python-docx, pdf2docx, openpyxl, Pillow)
+├── README.md                    # This file
+├── test_converters.py           # Unit tests for all converters
+├── verify_project.py            # Project verification script
+├── input/                       # Folder for files to convert
+├── output/                      # Folder for converted files
+├── converters/                  # Converter modules
+│   ├── __init__.py              # Package initialization
+│   ├── base_converter.py        # Abstract base class for all converters
+│   ├── csv_converter.py         # CSV file converter
+│   ├── pdf_converter.py         # PDF file converter
+│   ├── docx_converter.py        # Word document converter
+│   └── txt_converter.py         # Text file converter
+├── ui/                          # User interface
+│   └── gui.py                   # GUI implementation
+└── utils/                       # Utility functions
+    └── file_utils.py            # File handling utilities
 ```
 
 ## Currently Implemented
@@ -63,6 +65,7 @@ The project uses the following Python libraries (see `requirements.txt`):
 ### Using the GUI
 
 1. Run the application:
+
    ```bash
    python main.py
    ```
@@ -89,4 +92,5 @@ To validate all converters are working correctly:
 ```bash
 python test_converters.py
 ```
+
 This will create sample files and test each converter type.
